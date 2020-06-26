@@ -1,19 +1,23 @@
 Feature: Test login functionality 
-
-Scenario:
-Given I open the Browser
-When I go to the application
-Then I should see the logo
-And I enter valid username
-And I enter valid password
-When I click the login button
-
-
-
-Scenario:
-Given I open the Browser
-When I go to the application
-Then I should see the logo
-And I enter valid username
-And I enter valid password
-When I click the login button
+Background: 
+Given I Open Chrome Browser 
+    When I go to Salesforce application
+    Then I should see the Salesforce logo
+    Then I enter valid "batch03@codegator.us.qa" and "Pa55word" 
+    When I click the login button
+    
+    @login
+  Scenario Outline:  Test Using Valid Credential
+  
+    Then I enter valid "<username>" and "<password>" 
+    
+    Then I should see the logout button
+   
+    
+    Examples:
+    |username|password|
+    |batch03@codegator.us.qa|Pa55word|
+    |batch03@codegator.us.qa|Pa55word|
+    |batch03@codegator.us.qa|Pa55word|
+    
+    
