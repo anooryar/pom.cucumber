@@ -3,7 +3,7 @@ Background:
 Given I Open Chrome Browser 
     When I go to Salesforce application
     Then I should see the Salesforce logo
-    Then I enter valid "batch03@codegator.us.qa" and "Pa55word" 
+   
     When I click the login button
     
     @login
